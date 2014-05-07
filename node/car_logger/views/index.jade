@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.container
+    div.span4
+    div.span4
+      .jumbotron
+        h1.center Welcome to OBd Car-nobi!
+      form(action="graph", method="post", enctype="multipart/form-data")
+        .fileinput.fileinput-new(data-provides='fileinput')
+          .input-group
+            .form-control.uneditable-input.span3(data-trigger='fileinput')
+              i.glyphicon.glyphicon-file.fileinput-exists
+              span.fileinput-filename
+            span.input-group-addon.btn.btn-default.btn-file
+              span.fileinput-new Select file
+              span.fileinput-exists Change
+              input(type='file', name='csv')
+            a.input-group-addon.btn.btn-default.fileinput-exists(href='#', data-dismiss='fileinput') Remove
+            button.input-group-addon.btn.btn-default.fileinput-exists(type="submit", href="/graph", name="upload", style="width=77px;height=34px") Submit
+    div.span4
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
